@@ -7,7 +7,7 @@ interface Task {
 	createdAt: number;
 }
 
-interface ToDoStore{
+interface ToDoStore {
 	tasks: Task[];
 	createTask: (title: string)=> void;
 	updateTask: (id: string, title:string)=> void;
@@ -16,8 +16,18 @@ interface ToDoStore{
 
 export const useToDoStore = create<ToDoStore>((set, get) => ({
 	tasks: [
-	
+		{
+			createdAt : 16816719586801,
+		id : "d7be0af80152flgjs2bvcc",
+		title :"ssssas",
+	},
+	{
+		createdAt : 16816719586805,
+	id : "d7be0af80152flasdasdcc",
+	title :"ssss666as",
+}
 	],
+
 	createTask: (title) => {
 		const { tasks } = get();
 		const newTask = {
@@ -31,6 +41,7 @@ export const useToDoStore = create<ToDoStore>((set, get) => ({
 		})
 	
 	},
+
 	updateTask: (id: string, title: string) => {
 		const { tasks } = get();
 		set({
@@ -40,6 +51,7 @@ export const useToDoStore = create<ToDoStore>((set, get) => ({
 			}))
 		})
 	},
+
 	removeTask: (id:string) => {
 		const { tasks } = get();
 		set({
